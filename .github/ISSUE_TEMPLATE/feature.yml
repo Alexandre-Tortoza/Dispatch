@@ -1,0 +1,76 @@
+name: Propor funcionalidade
+description: Proponha uma nova capacidade a partir de um problema ou necessidade concreta.
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        O título da issue deve ser escrito em inglês. As informações descritivas abaixo devem ser preenchidas em PT-BR.
+        Comece pelo problema e pelo comportamento desejado. Evite antecipar uma solução técnica quando ela ainda não for necessária.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto
+      description: Descreva o cenário em que a necessidade aparece.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema
+      description: Explique qual problema precisa ser resolvido e para quem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo
+      description: Descreva o resultado que a funcionalidade deve produzir.
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requisitos
+      description: Liste requisitos conhecidos sem transformar hipóteses em decisões definitivas.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite
+      description: Liste condições objetivas que permitam considerar a funcionalidade concluída.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validação
+      description: Explique como o comportamento será verificado.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependências
+      description: Liste issues, decisões ou entregas relacionadas. Use "Nenhuma" quando não houver.
+    validations:
+      required: true
+
+  - type: textarea
+    id: documentation
+    attributes:
+      label: Impacto em documentação
+      description: Indique a documentação que deverá ser criada ou atualizada. Use "Nenhum" quando não houver.
+    validations:
+      required: true

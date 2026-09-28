@@ -17,6 +17,7 @@ As políticas são introduzidas de forma incremental, seguindo suas dependência
 7. [Ownership do repositório](ownership.md).
 8. [Proteção do repositório](repository-protection.md).
 9. [Checks de governança](policy-checks.md).
+10. [Gerenciamento de dependências](dependencies.md).
 
 Enquanto uma política específica ainda estiver em implementação, o [`CONTRIBUTING.md`](../../CONTRIBUTING.md) funciona como contrato geral de contribuição.
 

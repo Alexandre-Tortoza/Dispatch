@@ -26,6 +26,24 @@
         "required_approving_review_count": 0,
         "required_review_thread_resolution": true
       }
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "do_not_enforce_on_create": false,
+        "required_status_checks": [
+          {
+            "context": "governance / branch-policy"
+          },
+          {
+            "context": "governance / commit-policy"
+          },
+          {
+            "context": "governance / pr-title"
+          }
+        ],
+        "strict_required_status_checks_policy": false
+      }
     }
   ]
 }

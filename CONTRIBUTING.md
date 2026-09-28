@@ -45,14 +45,14 @@ A convenção oficial está em [`docs/governance/branch-naming.md`](docs/governa
 
 ## Commits
 
-Os commits devem utilizar Conventional Commits.
+Os commits de desenvolvimento devem seguir a [política de Conventional Commits](docs/governance/commits.md).
 
 Os tipos técnicos permanecem em inglês, por exemplo `feat`, `fix`, `docs`, `refactor` e `ci`. A descrição textual do commit e seu corpo devem ser escritos em PT-BR.
 
 Exemplo:
 
 ```text
-feat(order): adicionar criação de pedidos
+feat(order): add order creation
 
 Implementa o fluxo inicial de criação e valida os dados obrigatórios.
 ```

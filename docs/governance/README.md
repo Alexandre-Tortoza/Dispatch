@@ -10,7 +10,7 @@ As políticas são introduzidas de forma incremental, seguindo suas dependência
 
 1. [Estratégia de branches e promoção](branch-strategy.md).
 2. [Convenção de nomes de branches](branch-naming.md).
-3. Conventional Commits.
+3. [Conventional Commits](commits.md).
 4. Pull Requests e merges.
 5. Templates de issues e Pull Requests.
 

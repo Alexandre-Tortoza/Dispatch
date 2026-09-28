@@ -1,0 +1,102 @@
+name: Governance / Release Policy
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag to validate
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  release-policy:
+    name: governance / release-policy
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPOSITORY: ${{ github.repository }}
+      TAG_NAME: ${{ inputs.tag || github.ref_name }}
+    steps:
+      - name: Validate release tag
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 <<'PY'
+          import json
+          import os
+          import re
+          import sys
+          import urllib.parse
+          import urllib.request
+
+          repository = os.environ["REPOSITORY"]
+          tag_name = os.environ["TAG_NAME"]
+          token = os.environ["GH_TOKEN"]
+
+          if not re.fullmatch(
+              r"v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)",
+              tag_name,
+          ):
+              print(
+                  f"Invalid release tag {tag_name!r}; expected vMAJOR.MINOR.PATCH.",
+                  file=sys.stderr,
+              )
+              sys.exit(1)
+
+          def github_api(path):
+              request = urllib.request.Request(
+                  f"https://api.github.com{path}",
+                  headers={
+                      "Accept": "application/vnd.github+json",
+                      "Authorization": f"Bearer {token}",
+                      "X-GitHub-Api-Version": "2022-11-28",
+                  },
+              )
+              with urllib.request.urlopen(request) as response:
+                  return json.load(response)
+
+          encoded_tag = urllib.parse.quote(tag_name, safe="")
+          ref = github_api(f"/repos/{repository}/git/ref/tags/{encoded_tag}")
+          obj = ref["object"]
+
+          while obj["type"] == "tag":
+              tag_object = github_api(
+                  f"/repos/{repository}/git/tags/{obj['sha']}"
+              )
+              obj = tag_object["object"]
+
+          if obj["type"] != "commit":
+              print(
+                  f"Tag {tag_name} does not resolve to a commit.",
+                  file=sys.stderr,
+              )
+              sys.exit(1)
+
+          tag_commit = obj["sha"]
+          main_ref = github_api(f"/repos/{repository}/git/ref/heads/main")
+          main_commit = main_ref["object"]["sha"]
+
+          comparison = github_api(
+              f"/repos/{repository}/compare/{tag_commit}...{main_commit}"
+          )
+
+          if comparison["status"] not in {"ahead", "identical"}:
+              print(
+                  f"Tag {tag_name} points to {tag_commit}, which is not "
+                  "an ancestor of main.",
+                  file=sys.stderr,
+              )
+              sys.exit(1)
+
+          print(
+              f"Release tag {tag_name} is valid and points to a commit "
+              "contained in main."
+          )
+          PY

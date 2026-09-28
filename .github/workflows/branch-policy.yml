@@ -1,0 +1,69 @@
+name: Governance / Branch Policy
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - staging
+      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - edited
+      - ready_for_review
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  branch-policy:
+    name: governance / branch-policy
+    runs-on: ubuntu-latest
+    env:
+      HEAD_REF: ${{ github.head_ref }}
+      BASE_REF: ${{ github.base_ref }}
+      ACTOR: ${{ github.actor }}
+    steps:
+      - name: Validate branch route
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          normal_branch_regex='^(feat|fix|refactor|perf|test|docs|build|ci|chore|revert)/[1-9][0-9]*-[a-z0-9]+(-[a-z0-9]+)*$'
+          hotfix_branch_regex='^hotfix/[1-9][0-9]*-[a-z0-9]+(-[a-z0-9]+)*$'
+          dependabot_branch_regex='^dependabot/'
+
+          valid=false
+
+          case "${BASE_REF}" in
+            dev)
+              if [[ "${HEAD_REF}" =~ ${normal_branch_regex} ]]; then
+                valid=true
+              elif [[ "${HEAD_REF}" == "main" ]]; then
+                valid=true
+              elif [[ "${ACTOR}" == "dependabot[bot]" && "${HEAD_REF}" =~ ${dependabot_branch_regex} ]]; then
+                valid=true
+              fi
+              ;;
+            staging)
+              if [[ "${HEAD_REF}" == "dev" || "${HEAD_REF}" == "main" ]]; then
+                valid=true
+              fi
+              ;;
+            main)
+              if [[ "${HEAD_REF}" == "staging" || "${HEAD_REF}" =~ ${hotfix_branch_regex} ]]; then
+                valid=true
+              fi
+              ;;
+          esac
+
+          if [[ "${valid}" != "true" ]]; then
+            printf 'Invalid branch route: %s -> %s\n' "${HEAD_REF}" "${BASE_REF}" >&2
+            printf 'Allowed normal flow: temporary -> dev, dev -> staging, staging -> main.\n' >&2
+            printf 'Hotfix flow: hotfix/<issue>-<slug> -> main, followed by main synchronization to staging/dev.\n' >&2
+            exit 1
+          fi
+
+          printf 'Valid branch route: %s -> %s\n' "${HEAD_REF}" "${BASE_REF}"

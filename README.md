@@ -1,40 +1,40 @@
 # Dispatch
 
-Dispatch is a portfolio project focused on building a logistics system with Laravel while demonstrating backend software engineering practices in a product-like environment.
+O Dispatch é um projeto de portfólio voltado ao desenvolvimento de um sistema de logística com Laravel, criado para demonstrar práticas de engenharia de software backend em um cenário próximo de um produto real.
 
-The project is intentionally developed incrementally. The goal is not only to implement logistics features, but also to make the engineering process visible through architecture, tests, documentation, observability, security, CI/CD, versioning, and delivery practices.
+O projeto é desenvolvido de forma incremental. O objetivo não é apenas implementar funcionalidades logísticas, mas também tornar visível o processo de engenharia por meio de arquitetura, testes, documentação, observabilidade, segurança, CI/CD, versionamento e práticas de entrega.
 
 ## Status
 
-Dispatch is currently in its repository and engineering-foundation phase. Application code and domain capabilities will be introduced in later milestones.
+O Dispatch está atualmente na fase de fundação do repositório e da infraestrutura de engenharia. O código da aplicação e as capacidades de domínio serão introduzidos nas próximas milestones.
 
-## Engineering direction
+## Direcionamento de engenharia
 
-- Laravel as the primary application framework.
-- Modular monolith as the initial architectural style.
-- Small, reviewable, and frequently delivered changes.
-- Automated tests and quality gates introduced progressively.
-- Explicit repository governance and documented engineering decisions.
-- CI/CD designed to support rapid promotion through development, staging, and production.
-- Observability, security, and operational documentation added as the system evolves.
-- Architectural complexity introduced only when justified by concrete requirements.
+- Laravel como framework principal da aplicação.
+- Monólito modular como estilo arquitetural inicial.
+- Mudanças pequenas, revisáveis e entregues com frequência.
+- Testes automatizados e quality gates introduzidos progressivamente.
+- Governança explícita do repositório e decisões de engenharia documentadas.
+- CI/CD projetado para permitir promoção rápida entre desenvolvimento, staging e produção.
+- Observabilidade, segurança e documentação operacional adicionadas conforme o sistema evolui.
+- Complexidade arquitetural introduzida apenas quando houver requisitos concretos que a justifiquem.
 
-## Branches and environments
+## Branches e ambientes
 
-The repository is organized around three permanent branches:
+O repositório é organizado em torno de três branches permanentes:
 
-- `dev`, integration branch for development work.
-- `staging`, candidate branch for pre-production validation.
-- `main`, production and release branch.
+- `dev`, branch de integração do desenvolvimento.
+- `staging`, branch candidata para validação antes da produção.
+- `main`, branch de produção e releases.
 
-Detailed promotion and merge rules are documented separately as repository governance is established.
+As regras detalhadas de promoção e merge são documentadas separadamente conforme a governança do repositório é estabelecida.
 
-## Documentation
+## Documentação
 
-The documentation index is available in [`docs/README.md`](docs/README.md).
+O índice da documentação está disponível em [`docs/README.md`](docs/README.md).
 
-Contribution and repository-governance policies are introduced during the repository-foundation milestone and will be linked from this README as they become available.
+As políticas de contribuição e governança do repositório são introduzidas durante a milestone de fundação e serão referenciadas neste README conforme forem disponibilizadas.
 
-## License
+## Licença
 
-Dispatch is licensed under the [GNU Affero General Public License v3.0](LICENSE).
+O Dispatch é distribuído sob a [GNU Affero General Public License v3.0](LICENSE).

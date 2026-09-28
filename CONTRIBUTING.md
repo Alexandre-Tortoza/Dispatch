@@ -61,7 +61,7 @@ A política completa de tipos, scopes, breaking changes e validação é mantida
 
 ## Pull Requests
 
-Toda alteração em branch permanente deve entrar por Pull Request.
+Toda alteração em branch permanente deve entrar por Pull Request e seguir a [política de Pull Requests e merges](docs/governance/pull-requests.md).
 
 Use Draft enquanto a implementação ainda não estiver pronta para avaliação. Ao marcar um Pull Request como pronto para review, o autor declara que:
 

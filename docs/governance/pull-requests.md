@@ -136,6 +136,35 @@ Squash Merge e Rebase Merge não fazem parte do fluxo oficial.
 
 A escolha por Merge Commit preserva a ancestralidade entre branches permanentes e evita reescrever o histórico durante promoções sucessivas.
 
+## Remoção de branches temporárias
+
+Após o merge de uma branch temporária em `dev`, a branch de origem deve ser removida.
+
+Essa regra se aplica a branches como:
+
+- `feat/*`;
+- `fix/*`;
+- `refactor/*`;
+- `perf/*`;
+- `test/*`;
+- `docs/*`;
+- `build/*`;
+- `ci/*`;
+- `chore/*`;
+- `revert/*`.
+
+Branches permanentes nunca são removidas por essa política:
+
+```text
+dev
+staging
+main
+```
+
+Branches de hotfix também devem ser removidas após a correção ter sido integrada e sincronizada conforme a estratégia de branches.
+
+Sempre que a configuração do repositório permitir, a remoção automática da head branch após o merge deve ser habilitada para reduzir branches obsoletas e trabalho manual.
+
 ## Histórico de produção
 
 A branch `main` representa o estado de produção.

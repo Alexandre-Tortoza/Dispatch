@@ -41,18 +41,18 @@ Hotfixes de produção são exceções ao fluxo normal e devem seguir a polític
 
 Toda mudança planejada deve utilizar uma branch temporária associada a uma issue.
 
-A convenção oficial de nomes e os caminhos permitidos entre branches são definidos nas políticas de governança. Não crie uma nova convenção local para um caso específico sem atualizar a política correspondente.
+A convenção oficial está em [`docs/governance/branch-naming.md`](docs/governance/branch-naming.md), e os caminhos permitidos estão em [`docs/governance/branch-strategy.md`](docs/governance/branch-strategy.md). Não crie uma nova convenção local para um caso específico sem atualizar a política correspondente.
 
 ## Commits
 
-Os commits devem utilizar Conventional Commits.
+Os commits de desenvolvimento devem seguir a [política de Conventional Commits](docs/governance/commits.md).
 
 Os tipos técnicos permanecem em inglês, por exemplo `feat`, `fix`, `docs`, `refactor` e `ci`. A descrição textual do commit e seu corpo devem ser escritos em PT-BR.
 
 Exemplo:
 
 ```text
-feat(order): adicionar criação de pedidos
+feat(order): add order creation
 
 Implementa o fluxo inicial de criação e valida os dados obrigatórios.
 ```
@@ -61,7 +61,7 @@ A política completa de tipos, scopes, breaking changes e validação é mantida
 
 ## Pull Requests
 
-Toda alteração em branch permanente deve entrar por Pull Request.
+Toda alteração em branch permanente deve entrar por Pull Request e seguir a [política de Pull Requests e merges](docs/governance/pull-requests.md).
 
 Use Draft enquanto a implementação ainda não estiver pronta para avaliação. Ao marcar um Pull Request como pronto para review, o autor declara que:
 

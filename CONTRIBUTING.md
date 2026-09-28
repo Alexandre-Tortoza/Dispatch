@@ -75,11 +75,13 @@ Use Draft enquanto a implementação ainda não estiver pronta para avaliação.
 
 A descrição do Pull Request deve explicar contexto e validação, mas não substitui análise do diff, testes ou checks automatizados.
 
-## Reviews e checks
+## Reviews, ownership e checks
 
 Regras mecânicas devem ser verificadas por automação sempre que possível.
 
 Reviews humanas devem concentrar-se em decisões que exigem julgamento, como comportamento, arquitetura, legibilidade, segurança, compatibilidade e aderência ao domínio.
+
+O projeto utiliza [CODEOWNERS e uma política de ownership](docs/governance/ownership.md) para tornar responsabilidades explícitas. Enquanto houver um único mantenedor, ownership não deve criar um requisito impossível de aprovação própria.
 
 O projeto não deve introduzir aprovação obrigatória sem utilidade prática apenas para satisfazer processo.
 
@@ -91,7 +93,7 @@ Evite documentar funcionalidades ou decisões que ainda não existem.
 
 ## Bugs e propostas de mudança
 
-Utilize os templates oficiais de issue assim que estiverem disponíveis. Até lá, uma issue deve conter informações suficientes para reproduzir o problema ou entender a mudança proposta.
+Utilize os templates oficiais de issue. Uma issue deve conter informações suficientes para reproduzir o problema ou entender a mudança proposta.
 
 ## Referências
 

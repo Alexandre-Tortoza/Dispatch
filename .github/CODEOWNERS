@@ -1,0 +1,14 @@
+# Default ownership
+* @Alexandre-Tortoza
+
+# Repository governance and GitHub automation
+/.github/ @Alexandre-Tortoza
+/docs/governance/ @Alexandre-Tortoza
+
+# Architecture and infrastructure
+/docs/architecture/ @Alexandre-Tortoza
+/infrastructure/ @Alexandre-Tortoza
+/infra/ @Alexandre-Tortoza
+/docker/ @Alexandre-Tortoza
+/Dockerfile @Alexandre-Tortoza
+/docker-compose*.yml @Alexandre-Tortoza

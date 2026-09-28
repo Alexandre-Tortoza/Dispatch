@@ -1,21 +1,21 @@
-# Dispatch documentation
+# Documentação do Dispatch
 
-This directory is the entry point for technical and operational documentation that grows with the project.
+Este diretório é o ponto de entrada para a documentação técnica e operacional que evolui junto com o projeto.
 
-Documentation should describe decisions and capabilities that already exist. The repository should avoid speculative documentation for architecture, infrastructure, or domain behavior that has not yet been implemented or approved.
+A documentação deve descrever decisões e capacidades que realmente existem. O repositório deve evitar documentação especulativa sobre arquitetura, infraestrutura ou comportamento de domínio que ainda não tenha sido implementado ou aprovado.
 
-## Documentation areas
+## Áreas de documentação
 
-As the project evolves, documentation will be organized into the following areas:
+Conforme o projeto evoluir, a documentação será organizada nas seguintes áreas:
 
-- `governance/`, contribution, branch, commit, pull request, and repository policies.
-- `architecture/`, system structure, module boundaries, and architectural views.
-- `adr/`, Architecture Decision Records for decisions that require durable context.
-- `operations/`, deployment, observability, incident, and operational procedures.
+- `governance/`, políticas de contribuição, branches, commits, Pull Requests e repositório.
+- `architecture/`, estrutura do sistema, limites entre módulos e visões arquiteturais.
+- `adr/`, Architecture Decision Records para decisões que exigem contexto duradouro.
+- `operations/`, deploy, observabilidade, incidentes e procedimentos operacionais.
 
-Directories and documents are created only when there is concrete content to maintain.
+Diretórios e documentos devem ser criados apenas quando houver conteúdo concreto a ser mantido.
 
-## Current references
+## Referências atuais
 
-- [Project overview](../README.md)
-- [License](../LICENSE)
+- [Visão geral do projeto](../README.md)
+- [Licença](../LICENSE)

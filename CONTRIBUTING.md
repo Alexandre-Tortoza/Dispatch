@@ -43,6 +43,8 @@ Toda mudança planejada deve utilizar uma branch temporária associada a uma iss
 
 A convenção oficial está em [`docs/governance/branch-naming.md`](docs/governance/branch-naming.md), e os caminhos permitidos estão em [`docs/governance/branch-strategy.md`](docs/governance/branch-strategy.md). Não crie uma nova convenção local para um caso específico sem atualizar a política correspondente.
 
+Após o merge de uma branch temporária em `dev`, a branch de origem deve ser removida. As branches permanentes `dev`, `staging` e `main` não são removidas.
+
 ## Commits
 
 Os commits de desenvolvimento devem seguir a [política de Conventional Commits](docs/governance/commits.md).

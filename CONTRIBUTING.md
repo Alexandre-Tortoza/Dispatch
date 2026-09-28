@@ -41,7 +41,7 @@ Hotfixes de produção são exceções ao fluxo normal e devem seguir a polític
 
 Toda mudança planejada deve utilizar uma branch temporária associada a uma issue.
 
-A convenção oficial de nomes e os caminhos permitidos entre branches são definidos nas políticas de governança. Não crie uma nova convenção local para um caso específico sem atualizar a política correspondente.
+A convenção oficial está em [`docs/governance/branch-naming.md`](docs/governance/branch-naming.md), e os caminhos permitidos estão em [`docs/governance/branch-strategy.md`](docs/governance/branch-strategy.md). Não crie uma nova convenção local para um caso específico sem atualizar a política correspondente.
 
 ## Commits
 

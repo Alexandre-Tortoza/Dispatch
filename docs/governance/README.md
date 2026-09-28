@@ -12,7 +12,7 @@ As políticas são introduzidas de forma incremental, seguindo suas dependência
 2. [Convenção de nomes de branches](branch-naming.md).
 3. [Conventional Commits](commits.md).
 4. [Pull Requests e merges](pull-requests.md).
-5. Templates de issues e Pull Requests.
+5. [Templates de issues e Pull Requests](templates.md).
 
 Enquanto uma política específica ainda estiver em implementação, o [`CONTRIBUTING.md`](../../CONTRIBUTING.md) funciona como contrato geral de contribuição.
 

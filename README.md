@@ -33,7 +33,7 @@ As regras detalhadas de promoção e merge são documentadas separadamente confo
 
 O índice da documentação está disponível em [`docs/README.md`](docs/README.md).
 
-As políticas de contribuição e governança do repositório são introduzidas durante a milestone de fundação e serão referenciadas neste README conforme forem disponibilizadas.
+As regras para contribuir com o projeto estão em [`CONTRIBUTING.md`](CONTRIBUTING.md), e as políticas específicas do repositório ficam em [`docs/governance/`](docs/governance/README.md).
 
 ## Licença
 
